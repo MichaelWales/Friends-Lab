@@ -102,8 +102,7 @@ class TestFriends < MiniTest::Test
 # 5. For a given person, remove a specific name from their list of friends
   # (hint: Same as above, testing for the length of the array should be sufficient)
   def test_remove_friend
-    add_friend(@person2, "Scrappy-Doo")
-    remove_friend(@person2, "Fred")
+    remove_friend(@person2, "Scrappy-Doo")
     assert_equal(1, @person2[:friends].length)
   end
 

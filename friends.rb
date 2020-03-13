@@ -7,12 +7,7 @@ def get_favourite_tv_show(person)
 end
 
 def likes_to_eat(person, food)
-  for snack in person[:favourites][:snacks]
-    if snack == food
-      return true
-    end
-  end
-  return false
+  person[:favourites][:snacks].include?(food)
 end
 
 def add_friend(person, new_friend)
@@ -39,9 +34,7 @@ end
 def all_favourite_foods(people)
   favourite_foods = []
   for person in people
-    for snack in person[:favourites][:snacks]
-      favourite_foods.push(snack)
-    end
+    foods.concat(person[:favourites][:snacks])
   end
   return favourite_foods
 end
